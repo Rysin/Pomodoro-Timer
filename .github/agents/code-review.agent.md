@@ -1,7 +1,11 @@
 ---
 name: sdlc-code-review
 
-description: Reviews Pomodoro TypeScript, DOM, notification, and test changes.
+description: Reviews Pomodoro TypeScript, DOM, notification, and test changes. Input the approved scope and implementation diff.
+tools: ['read', 'search', 'edit', 'execute']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 OBJECTIVE:

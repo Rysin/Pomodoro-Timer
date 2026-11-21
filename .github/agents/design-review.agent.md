@@ -1,7 +1,11 @@
 ---
 name: sdlc-design-review
 
-description: Reviews the Pomodoro TypeScript architecture and records design decisions.
+description: Reviews the Pomodoro TypeScript architecture and records design decisions. Input approved architecture.
+tools: ['read', 'search', 'edit', 'execute']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 

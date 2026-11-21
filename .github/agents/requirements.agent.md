@@ -1,7 +1,11 @@
 ---
 name: sdlc-requirements
 
-description: Analyzes Jira requirements for the existing TypeScript Pomodoro Timer.
+description: Analyzes a Jira story for the existing TypeScript Pomodoro Timer. Input a Jira story URL.
+tools: ['read', 'search', 'edit', 'execute', 'atlassian/getJiraIssue', 'atlassian/getAccessibleAtlassianResources']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 

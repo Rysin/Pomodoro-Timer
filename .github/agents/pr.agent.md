@@ -1,7 +1,11 @@
 ---
 name: sdlc-pr
 
-description: Prepares an approved Pomodoro PR targeting main with actual verification evidence.
+description: Prepares an approved Pomodoro PR targeting main with actual verification evidence. Input the approved review, verification, and feature branch.
+tools: ['read', 'search', 'execute', 'github/create_pull_request']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 

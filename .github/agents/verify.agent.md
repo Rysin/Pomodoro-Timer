@@ -1,7 +1,11 @@
 ---
 name: sdlc-verify
 
-description: Derives story scenarios, writes and runs Playwright tests, and verifies Pomodoro changes.
+description: Derives story scenarios, writes and runs Playwright tests, and verifies Pomodoro changes. Input the approved story, plan, and review.
+tools: ['read', 'search', 'edit', 'execute', 'playwright/*']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 

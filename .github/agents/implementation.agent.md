@@ -1,7 +1,11 @@
 ---
 name: sdlc-implementation
 
-description: Implements approved Pomodoro changes using strict TypeScript and plain DOM.
+description: Implements approved Pomodoro changes using strict TypeScript and plain DOM. Input the approved implementation plan and security remediation.
+tools: ['read', 'search', 'edit', 'execute', 'playwright/*']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 OBJECTIVE:

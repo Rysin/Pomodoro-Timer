@@ -1,7 +1,11 @@
 ---
 name: sdlc-impl-plan
 
-description: Plans dependency-ordered TypeScript Pomodoro changes and verification.
+description: Plans dependency-ordered TypeScript Pomodoro changes and verification. Input approved architecture and design review.
+tools: ['read', 'search', 'edit', 'execute']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 OBJECTIVE:

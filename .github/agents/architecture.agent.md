@@ -1,7 +1,11 @@
 ---
 name: sdlc-architecture
 
-description: Designs a Vite and TypeScript Pomodoro solution from approved requirements.
+description: Designs a Vite and TypeScript Pomodoro solution. Input approved requirements.
+tools: ['read', 'search', 'edit', 'execute']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 OBJECTIVE:

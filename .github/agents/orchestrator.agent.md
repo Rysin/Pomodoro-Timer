@@ -1,7 +1,11 @@
 ---
 name: sdlc-orchestrator
 
-description: Coordinates the gated Pomodoro TypeScript SDLC with an orchestrator-owned security stage.
+description: Coordinates the gated Pomodoro TypeScript SDLC with an orchestrator-owned security stage. Input a Jira story URL.
+tools: ['read', 'search', 'edit', 'execute', 'agent']
+user-invocable: true
+disable-model-invocation: false
+# Model is inherited from the current session.
 ---
 
 
