@@ -21,7 +21,7 @@ description: Coordinate the approved TypeScript Pomodoro SDLC with explicit stag
 | 8 | sdlc-verify | verify.hook.json | verification.md; approved scoped Playwright tests |
 | 9 | sdlc-pr | pr.hook.json | Approved PR targeting main |
 
-Checklist paths are under `.github/hooks/checklists/`. There is intentionally no security-remediation agent; do not create or delegate to one.
+Checklist paths are under `.github/hooks/checklists/`.
 
 # Approval cycle
 

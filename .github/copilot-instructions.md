@@ -36,7 +36,7 @@ Copilot Instructions — Pomodoro Timer Agentic SDLC
 
 1. Start the full Jira-based workflow with `sdlc-orchestrator`; `.github/prompts/requirement.prompt.md` starts requirements only.
 2. Agents define stage roles; skills define reusable procedures; scoped instructions apply to TypeScript, HTML, styles, tests, and SDLC artifacts.
-3. Stage 5 is owned by the orchestrator using `.github/skills/security-remediation/SKILL.md` and its gate checklist. There is intentionally no separate security-remediation agent.
+3. Stage 5 is owned by the orchestrator using `.github/skills/security-remediation/SKILL.md` and its gate checklist.
 4. `.github/hooks/checklists/*.hook.json` are agent-read JSON PRE/POST checklists, not executable hooks. This harness does not install runtime hook enforcement, CI, or Jira tooling. Agents must execute required checks and wait for approvals explicitly.
 5. A direct, explicitly scoped maintenance request need not launch the Jira pipeline. Never infer approval for commits, pushes, dependencies, or PRs from permission to edit files.
 

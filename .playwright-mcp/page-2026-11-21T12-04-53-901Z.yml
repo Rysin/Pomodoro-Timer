@@ -1,0 +1,22 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - paragraph [ref=e4]: A LITTLE TIME FOR WHAT MATTERS
+    - heading "Pomodoro Timer" [level=1] [ref=e5]
+    - paragraph [ref=e6]: Find your focus, one session at a time.
+  - region "Work session" [ref=e7]:
+    - paragraph [ref=e8]: Work session
+    - timer "Time remaining" [ref=e9]: 25:00
+    - paragraph [ref=e10]: Ready when you are.
+    - generic [ref=e11]:
+      - button "Start" [ref=e12] [cursor=pointer]
+      - button "Pause" [disabled] [ref=e13]
+      - button "Reset" [ref=e14] [cursor=pointer]
+    - paragraph [ref=e15]:
+      - text: Completed work sessions
+      - strong [ref=e16]: "0"
+  - region "A gentle reminder" [ref=e17]:
+    - generic [ref=e18]:
+      - heading "A gentle reminder" [level=2] [ref=e19]
+      - paragraph [ref=e20]: Get a notification when your session ends.
+    - button "Enable notifications" [ref=e21] [cursor=pointer]
+  - paragraph [ref=e22]: 25 minutes of focus · 5 minutes to recharge

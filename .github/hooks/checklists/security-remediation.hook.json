@@ -6,7 +6,7 @@
   "pre_check": [
     "impl-plan.md exists and Gate 4 passed",
     "REPO_URL and FEATURE_BRANCH_NAME provided",
-    "Orchestrator owns this stage using the security-remediation skill; no separate security agent is invoked",
+    "Orchestrator owns this stage using the security-remediation skill",
     "Supplied repository verified and non-main feature branch selected before scoped scans or edits"
   ],
   "post_check_label": "POST-CHECK (before moving to Implementation)",

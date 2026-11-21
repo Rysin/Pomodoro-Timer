@@ -68,7 +68,7 @@ e.g. requirements.hook.json, architecture.hook.json, design-review.hook.json, im
 
 STAGE 5 OWNERSHIP:
 
-1. Do not invoke or create a security-remediation agent. Perform Stage 5 using `.github/skills/security-remediation/SKILL.md` and `.github/hooks/checklists/security-remediation.hook.json`.
+1. Perform Stage 5 using `.github/skills/security-remediation/SKILL.md` and `.github/hooks/checklists/security-remediation.hook.json`.
 2. Verify the supplied repository and non-main branch; create/switch safely before scanning or editing application files.
 3. Write security-remediation.md, show its diff and any scoped fixes, execute gate checks, and wait for approval before Implementation.
 4. Out-of-scope security findings are reported without sensitive values; get approval for any scope expansion instead of making unrelated fixes.
