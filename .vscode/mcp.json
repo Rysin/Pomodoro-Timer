@@ -12,7 +12,7 @@
                 "-y",
                 "@modelcontextprotocol/server-github"
             ],
-            "envFile": "${workspaceFolder}/.env"
+            "envFile": ".env"
         },
     "playwright": {
             "type": "stdio",
