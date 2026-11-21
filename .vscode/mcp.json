@@ -6,8 +6,21 @@
       "url": "https://mcp.atlassian.com/v2/mcp"
     },
     "github": {
-      "type": "http",
-      "url": "https://api.githubcopilot.com/mcp/"
-    }
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-github"
+            ],
+            "envFile": "${workspaceFolder}/.env"
+        },
+    "playwright": {
+            "type": "stdio",
+            "command": "npx",
+            "args": [
+                "-y",
+                "@playwright/mcp@latest"
+            ]
+        }
   }
 }
