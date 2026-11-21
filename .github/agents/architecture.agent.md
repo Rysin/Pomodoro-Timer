@@ -45,13 +45,14 @@ PROJECT GUIDANCE:
 1. Keep timer/state logic in `src/timer.ts`, DOM wiring in `src/main.ts`, and browser notifications in `src/notifications.ts`.
 2. Reuse `index.html`, `src/style.css`, and the existing Vitest tests. Do not invent components, hooks, routing, APIs, or persistence.
 3. Preserve manual phase starts and work-only counting unless requirements explicitly change them.
+4. Account for story-based Playwright verification: identify exact test and any necessary infrastructure paths, and identify any dependency proposal for explicit approval. Do not assume Playwright is installed.
 
 
 
 GUARDRAILS:
 
 1. Do not modify source code; only write/update architecture.md.
-2. Do not introduce new dependencies unless requirements.md requires them.
+2. Do not introduce new dependencies without a scoped need and explicit user approval.
 3. Show the artifact diff and wait for approval; re-read the stage checklist before handing off to Design Review.
 
 

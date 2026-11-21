@@ -31,7 +31,7 @@ PROJECT GUIDANCE:
 
 1. Sequence state/timer changes before dependent DOM and notification wiring, then focused tests and documentation.
 2. Reuse `tests/timer.test.ts` and `tests/notifications.test.ts`; use fake timers/system time rather than real-minute waits.
-3. Include `npm test` and `npm run build`, plus manual browser checks for impacted controls, layout, keyboard focus, and permissions.
+3. Plan story-based Playwright scenarios and tests, exact approved test paths, required setup and dependency approvals, and how Playwright and Vitest discovery will coexist. Include `npm test` and `npm run build`, plus manual browser checks for impacted controls, layout, keyboard focus, and permissions.
 4. State that no lint script is available; do not add one or a framework without a requirement.
 
 GUARDRAILS:

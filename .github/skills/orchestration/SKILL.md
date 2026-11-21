@@ -18,7 +18,7 @@ description: Coordinate the approved TypeScript Pomodoro SDLC with explicit stag
 | 5 | Orchestrator using security-remediation skill | security-remediation.hook.md | security-remediation.md; approved scoped fixes |
 | 6 | sdlc-implementation | implementation.hook.md | Scoped code, tests, and docs |
 | 7 | sdlc-code-review | code-review.hook.md | code-review.md |
-| 8 | sdlc-verify | verify.hook.md | verification.md |
+| 8 | sdlc-verify | verify.hook.md | verification.md; approved scoped Playwright tests |
 | 9 | sdlc-pr | pr.hook.md | Approved PR targeting main |
 
 Checklist paths are under `.github/hooks/`. There is intentionally no security-remediation agent; do not create or delegate to one.
@@ -28,7 +28,7 @@ Checklist paths are under `.github/hooks/`. There is intentionally no security-r
 1. Stage owners may draft only permitted outputs. Stages 1-4 can write their uncommitted planning artifacts before branch intake; they cannot edit application code or commit.
 2. Execute applicable guardrail and POST checks. Show full new artifact contents or existing-file diffs, scoped code changes, dependency changes, and evidence. Never expose suspected secret values.
 3. Ask for explicit approval using the host's question tool when available, then stop. PASS is not approval; silence or unrelated replies do not authorize advancement.
-4. Incorporate feedback in the same stage and repeat checks/approval. Route implementation fixes through Implementation and Review; never conceal them in Verify.
+4. Incorporate feedback in the same stage and repeat checks/approval. Route implementation fixes through Implementation and Review; never conceal them in Verify. Route Playwright tests written in Verify through Review and obtain approval before completing Verify.
 5. After approval, report stage/gate PASS or FAIL, reasons, and the next action. Suggest commit messages only; actual commits/publication need their own approval.
 6. Example: Gate 6 with passing tests but no user approval stays pending; do not invoke Review.
 
