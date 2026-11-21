@@ -299,21 +299,23 @@ Activation rules: the owning agent must read its role and Markdown gate checklis
 
 Context Strategy ("Lost in the Middle"):
 
-1. Anchor first and last: restate the current stage name, gate number, and pending question at both the start and end of any long agent response.
+1. Before a substantial task or stage, identify the current objective, constraints, and next action. For long pipeline responses, anchor the stage, gate, and pending decision at the beginning and end.
 
-2. One artifact at a time: load only the artifact file(s) relevant to the current stage (per the gate's PRE-CHECK), not the whole artifact history.
+2. Read only the files and sections needed for the current decision, including every required stage hook, agent, skill, and approval evidence. Use targeted searches and bounded reads; expand when necessary to verify behavior or resolve ambiguity.
 
-3. Summarize before carrying forward: when a stage depends on a prior artifact, quote only the specific section needed (e.g. acceptance criteria), not the entire file.
+3. Before a handoff or context compaction, carry forward a concise state: objective, current stage and gate, exact approved scope and decisions, relevant paths and acceptance criteria, verification evidence and limitations, unresolved findings, and the next action or pending approval. Reference source artifacts so details can be rechecked.
 
-4. Recency for decisions: the most recent user approval/feedback always takes precedence over earlier context — restate the latest decision explicitly rather than relying on it being "somewhere above".
+4. Distinguish approved, pending, failed, and not-run items; never infer approval from a summary. Re-read the authoritative artifact or user decision if the handoff is incomplete or conflicts with the source.
+
+5. Summarize earlier material and quote only the needed sections, but always show the complete required new artifact, existing-file diff, and other approval payloads at the gate. Context optimization never replaces required checks or human approval.
 
 
 
 Prompt Caching Policy:
 
-1. Treat this file and the current stage's hook + agent file as the stable "prefix" context — keep their content and order unchanged within a run so runtimes that support prompt/context caching can reuse it.
+1. Keep stable instructions separate from changing task evidence where the host permits. Prompt caching is runtime-dependent; do not claim cache hits or token savings without measurements.
 
-2. Do not interleave frequently-changing content (live command output, diffs) before the stable prefix; append it after, so cache hits aren't invalidated by churn at the front.
+2. When constructing handoffs, put the objective and governing constraints first, then relevant evidence and the next action. Do not assume control over the host's internal prompt layout or compaction.
 
 3. Avoid re-pasting whole artifact files turn over turn — reference the file path and only quote the delta.
 
