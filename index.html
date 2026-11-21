@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f2eb" />
+    <title>Pomodoro Timer</title>
+  </head>
+  <body>
+    <main class="app">
+      <header class="heading">
+        <p class="eyebrow">A LITTLE TIME FOR WHAT MATTERS</p>
+        <h1>Pomodoro Timer</h1>
+        <p>Find your focus, one session at a time.</p>
+      </header>
+
+      <section class="timer-card" aria-labelledby="phase">
+        <p class="phase" id="phase">Work session</p>
+        <div class="clock" id="clock" role="timer" aria-label="Time remaining">25:00</div>
+        <p class="status" id="status" aria-live="polite">Ready when you are.</p>
+        <div class="controls">
+          <button class="primary" id="start" type="button">Start</button>
+          <button id="pause" type="button" disabled>Pause</button>
+          <button id="reset" type="button">Reset</button>
+        </div>
+        <p class="session-count">Completed work sessions <strong id="count">0</strong></p>
+      </section>
+
+      <section class="notifications" aria-labelledby="notifications-heading">
+        <div>
+          <h2 id="notifications-heading">A gentle reminder</h2>
+          <p id="notification-status" aria-live="polite">Get a notification when your session ends.</p>
+        </div>
+        <button id="enable-notifications" type="button">Enable notifications</button>
+      </section>
+      <p class="footnote">25 minutes of focus &middot; 5 minutes to recharge</p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
