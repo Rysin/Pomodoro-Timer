@@ -7,21 +7,21 @@ description: Coordinate the approved TypeScript Pomodoro SDLC with explicit stag
 
 1. Read project context in `.github/copilot-instructions.md`. For the full pipeline, ask only for JIRA_STORY_URL at intake. If Jira cannot be read, immediately request pasted description and acceptance criteria.
 2. Do not ask for REPO_URL or FEATURE_BRANCH_NAME until immediately before Stage 5.
-3. Read each stage's Markdown checklist before starting and before handing off. These are guidance files, not automatically executed hooks.
+3. Read each stage's JSON checklist before starting and before handing off. These are guidance files, not automatically executed hooks.
 
 | Gate | Owner | Checklist | Output |
 | --- | --- | --- | --- |
-| 1 | sdlc-requirements | requirements.hook.md | requirements.md |
-| 2 | sdlc-architecture | architecture.hook.md | architecture.md |
-| 3 | sdlc-design-review | design-review.hook.md | design-review.md; architecture.md if needed |
-| 4 | sdlc-impl-plan | impl-plan.hook.md | impl-plan.md |
-| 5 | Orchestrator using security-remediation skill | security-remediation.hook.md | security-remediation.md; approved scoped fixes |
-| 6 | sdlc-implementation | implementation.hook.md | Scoped code, tests, and docs |
-| 7 | sdlc-code-review | code-review.hook.md | code-review.md |
-| 8 | sdlc-verify | verify.hook.md | verification.md; approved scoped Playwright tests |
-| 9 | sdlc-pr | pr.hook.md | Approved PR targeting main |
+| 1 | sdlc-requirements | requirements.hook.json | requirements.md |
+| 2 | sdlc-architecture | architecture.hook.json | architecture.md |
+| 3 | sdlc-design-review | design-review.hook.json | design-review.md; architecture.md if needed |
+| 4 | sdlc-impl-plan | impl-plan.hook.json | impl-plan.md |
+| 5 | Orchestrator using security-remediation skill | security-remediation.hook.json | security-remediation.md; approved scoped fixes |
+| 6 | sdlc-implementation | implementation.hook.json | Scoped code, tests, and docs |
+| 7 | sdlc-code-review | code-review.hook.json | code-review.md |
+| 8 | sdlc-verify | verify.hook.json | verification.md; approved scoped Playwright tests |
+| 9 | sdlc-pr | pr.hook.json | Approved PR targeting main |
 
-Checklist paths are under `.github/hooks/`. There is intentionally no security-remediation agent; do not create or delegate to one.
+Checklist paths are under `.github/hooks/checklists/`. There is intentionally no security-remediation agent; do not create or delegate to one.
 
 # Approval cycle
 

@@ -13,7 +13,7 @@ OBJECTIVE:
 
 Reviews architecture.md as a senior reviewer; record findings and decisions.
 
-Read `.github/hooks/design-review.hook.md` before starting. Evaluate the timer/DOM/notification boundaries against approved requirements and impacted files.
+Read `.github/hooks/checklists/design-review.hook.json` before starting. Evaluate the timer/DOM/notification boundaries against approved requirements and impacted files.
 
 INSTRUCTIONS:
 

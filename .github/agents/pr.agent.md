@@ -13,7 +13,7 @@ OBJECTIVE:
 
 Prepare and, only after explicit approval, create the Pull Request targeting main. Use existing docs; do not invent a changelog file.
 
-Read `.github/hooks/pr.hook.md`, code-review.md, verification.md, the feature-branch diff, and package changes. Do not fabricate GitHub URLs or CI results when tooling is unavailable.
+Read `.github/hooks/checklists/pr.hook.json`, code-review.md, verification.md, the feature-branch diff, and package changes. Do not fabricate GitHub URLs or CI results when tooling is unavailable.
 
 
 INSTRUCTIONS:

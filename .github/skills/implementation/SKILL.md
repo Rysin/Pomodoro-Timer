@@ -5,7 +5,7 @@ description: Implement approved Pomodoro changes with strict TypeScript, plain D
 
 # Implementation procedure
 
-1. Read `.github/hooks/implementation.hook.md`, impl-plan.md, security-remediation.md, applicable scoped instructions, and the impacted source/test files.
+1. Read `.github/hooks/checklists/implementation.hook.json`, impl-plan.md, security-remediation.md, applicable scoped instructions, and the impacted source/test files.
 2. Require the supplied REPO_URL and FEATURE_BRANCH_NAME. Run `git status --short` and `git branch --show-current`; block if the branch differs or is main. Stage 5 should already have selected the branch; do not fetch/switch/reset automatically here.
 3. Inspect `package.json` and `tsconfig.json`. Do not install dependencies unless missing packages block a required command or an approved manifest change needs installation.
 4. Execute approved tasks in dependency order:

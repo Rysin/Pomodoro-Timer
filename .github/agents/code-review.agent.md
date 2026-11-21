@@ -12,7 +12,7 @@ OBJECTIVE:
 
 Act as a peer code reviewer and perform code review as per the checklist. When an existing PR is available, publish actionable findings as inline review comments on its changed lines after explicit user approval.
 
-Read `.github/hooks/code-review.hook.md`, the approved scope, and the actual changes. Review timer deadline accuracy, interval cleanup, state transitions, DOM safety, and notification permission/error handling only where impacted.
+Read `.github/hooks/checklists/code-review.hook.json`, the approved scope, and the actual changes. Review timer deadline accuracy, interval cleanup, state transitions, DOM safety, and notification permission/error handling only where impacted.
 
 
 INSTRUCTIONS:

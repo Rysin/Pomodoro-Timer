@@ -58,17 +58,17 @@ Load and follow the 'orchestration' skill for the full step-by-step workflow:
 
 Hooks:
 
-Before starting a stage and before advancing past it, read the matching Markdown gate checklist. These are not executable runtime hooks:
+Before starting a stage and before advancing past it, read the matching JSON gate checklist. These are not executable runtime hooks:
 
 ```
-.github/hooks/<stage>.hook.md
+.github/hooks/checklists/<stage>.hook.json
 ```
 
-e.g. requirements.hook.md, architecture.hook.md, design-review.hook.md, impl-plan.hook.md, security-remediation.hook.md, implementation.hook.md, code-review.hook.md, verify.hook.md, pr.hook.md
+e.g. requirements.hook.json, architecture.hook.json, design-review.hook.json, impl-plan.hook.json, security-remediation.hook.json, implementation.hook.json, code-review.hook.json, verify.hook.json, pr.hook.json
 
 STAGE 5 OWNERSHIP:
 
-1. Do not invoke or create a security-remediation agent. Perform Stage 5 using `.github/skills/security-remediation/SKILL.md` and `.github/hooks/security-remediation.hook.md`.
+1. Do not invoke or create a security-remediation agent. Perform Stage 5 using `.github/skills/security-remediation/SKILL.md` and `.github/hooks/checklists/security-remediation.hook.json`.
 2. Verify the supplied repository and non-main branch; create/switch safely before scanning or editing application files.
 3. Write security-remediation.md, show its diff and any scoped fixes, execute gate checks, and wait for approval before Implementation.
 4. Out-of-scope security findings are reported without sensitive values; get approval for any scope expansion instead of making unrelated fixes.

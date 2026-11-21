@@ -37,7 +37,7 @@ Copilot Instructions — Pomodoro Timer Agentic SDLC
 1. Start the full Jira-based workflow with `sdlc-orchestrator`; `.github/prompts/requirement.prompt.md` starts requirements only.
 2. Agents define stage roles; skills define reusable procedures; scoped instructions apply to TypeScript, HTML, styles, tests, and SDLC artifacts.
 3. Stage 5 is owned by the orchestrator using `.github/skills/security-remediation/SKILL.md` and its gate checklist. There is intentionally no separate security-remediation agent.
-4. `.github/hooks/*.hook.md` are agent-read Markdown PRE/POST checklists, not executable hooks. This harness does not install runtime hook enforcement, CI, or Jira tooling. Agents must execute required checks and wait for approvals explicitly.
+4. `.github/hooks/checklists/*.hook.json` are agent-read JSON PRE/POST checklists, not executable hooks. This harness does not install runtime hook enforcement, CI, or Jira tooling. Agents must execute required checks and wait for approvals explicitly.
 5. A direct, explicitly scoped maintenance request need not launch the Jira pipeline. Never infer approval for commits, pushes, dependencies, or PRs from permission to edit files.
 
 
@@ -183,7 +183,7 @@ Branching rule (MANDATORY):
 
 Stage Gates (Hooks):
 
-Each gate's PRE/POST checks are captured as a Markdown checklist under .github/hooks/<stage>.hook.md. Agents must read the matching checklist before starting a stage and before advancing to the next one. Every POST-CHECK also requires applicable guardrail checks and explicit human approval. These files do not execute automatically.
+Each gate's PRE/POST checks are captured as a JSON checklist under .github/hooks/checklists/<stage>.hook.json. Agents must read the matching checklist before starting a stage and before advancing to the next one. Every POST-CHECK also requires applicable guardrail checks and explicit human approval. These files do not execute automatically.
 
 Gate 1 — Requirements Complete
 
@@ -283,7 +283,7 @@ When skills, hooks, agents, and instructions conflict, resolve in this order (hi
 
 1. Explicit user instruction in the current turn — always wins.
 
-2. Stage hook file (`.github/hooks/*.hook.md`) — gate-specific PRE/POST checks.
+2. Stage hook file (`.github/hooks/checklists/*.hook.json`) — gate-specific PRE/POST checks.
 
 3. Agent definition (`.github/agents/*.agent.md`) — stage role and objective.
 
@@ -293,7 +293,7 @@ When skills, hooks, agents, and instructions conflict, resolve in this order (hi
 
 6. Scoped `.instructions.md` files (`applyTo` glob-scoped) — apply only within their glob; they refine, but never override, the global defaults above for files outside their scope.
 
-Activation rules: the owning agent must read its role and Markdown gate checklist explicitly; those checklists do not run themselves. Skills are only active when loaded; scoped instructions apply to matching files through `applyTo` in supporting hosts. If a skill and a checklist disagree, the checklist defines the pass/fail bar.
+Activation rules: the owning agent must read its role and JSON gate checklist explicitly; those checklists do not run themselves. Skills are only active when loaded; scoped instructions apply to matching files through `applyTo` in supporting hosts. If a skill and a checklist disagree, the checklist defines the pass/fail bar.
 
 
 

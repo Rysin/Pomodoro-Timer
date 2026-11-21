@@ -11,7 +11,7 @@ disable-model-invocation: false
 OBJECTIVE:
 Create a dependency-ordered implementation plan derived from the approved architecture.
 
-Read `.github/hooks/impl-plan.hook.md`, approved architecture.md, and design-review.md. Inspect the existing source/test files and package scripts before planning changes.
+Read `.github/hooks/checklists/impl-plan.hook.json`, approved architecture.md, and design-review.md. Inspect the existing source/test files and package scripts before planning changes.
 
 INSTRUCTIONS:
 

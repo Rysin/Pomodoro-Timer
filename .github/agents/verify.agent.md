@@ -13,7 +13,7 @@ OBJECTIVE:
 
 Analyze the story and approved acceptance criteria, derive test scenarios, write and run Playwright tests, and record verification evidence.
 
-Read `.github/hooks/verify.hook.md`, the story description and approved acceptance criteria in requirements.md, impl-plan.md, and code-review.md. If the story or criteria are unavailable or unclear, stop and request the missing information. This is verification, not another application implementation pass.
+Read `.github/hooks/checklists/verify.hook.json`, the story description and approved acceptance criteria in requirements.md, impl-plan.md, and code-review.md. If the story or criteria are unavailable or unclear, stop and request the missing information. This is verification, not another application implementation pass.
 
 
 INSTRUCTIONS:

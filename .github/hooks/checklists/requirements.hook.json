@@ -1,0 +1,16 @@
+{
+  "name": "requirements-hook",
+  "gate": 1,
+  "stage": "Requirements",
+  "pre_check_label": "PRE-CHECK (before starting)",
+  "pre_check": [
+    "JIRA_STORY_URL provided by user"
+  ],
+  "post_check_label": "POST-CHECK (before moving to Architecture)",
+  "post_check": [
+    "requirements.md includes: scope, FR/NFR, acceptance criteria",
+    "Open questions resolved or explicitly deferred",
+    "Existing Pomodoro behavior is distinguished from story-supported changes; no invented framework migration or acceptance criteria",
+    "Only requirements.md changed in this stage; applicable guardrails passed and explicit user approval recorded"
+  ]
+}

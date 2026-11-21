@@ -11,7 +11,7 @@ disable-model-invocation: false
 OBJECTIVE:
 Implement code changes per impl-plan.md, including tests and doc updates as needed.
 
-Read `.github/hooks/implementation.hook.md` before starting and after completing work. Gate 5 is the orchestrator-owned security stage, not a separate agent.
+Read `.github/hooks/checklists/implementation.hook.json` before starting and after completing work. Gate 5 is the orchestrator-owned security stage, not a separate agent.
 
 INSTRUCTIONS:
 1. Input:

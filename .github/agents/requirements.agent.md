@@ -13,7 +13,7 @@ OBJECTIVE:
 
 Perform requirement analysis of Jira user story and document the functional and non-functional requirements.
 
-Read `.github/hooks/requirements.hook.md` and project context in `.github/copilot-instructions.md` before starting. Treat existing behavior as the baseline, not as invented story acceptance criteria.
+Read `.github/hooks/checklists/requirements.hook.json` and project context in `.github/copilot-instructions.md` before starting. Treat existing behavior as the baseline, not as invented story acceptance criteria.
 
 
 Prompt:

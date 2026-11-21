@@ -30,7 +30,7 @@ You must create new or update existing (if any) architecture.md file in root rep
 
 CONSTRAINTS:
 
-1. Read `.github/hooks/architecture.hook.md` and project context in `.github/copilot-instructions.md`. Propose an architecture from the approved requirements; ask only about unresolved design choices.
+1. Read `.github/hooks/checklists/architecture.hook.json` and project context in `.github/copilot-instructions.md`. Propose an architecture from the approved requirements; ask only about unresolved design choices.
 2. The architecture.md file must include:
 
   - Overview

@@ -5,7 +5,7 @@ description: Review changed Pomodoro TypeScript, DOM, notifications, and Vitest 
 
 # Review procedure
 
-1. Read `.github/hooks/code-review.hook.md`, the approved requirements/plan scope, and actual staged/unstaged/untracked changes. Do not review unrelated code or infer changes from summaries.
+1. Read `.github/hooks/checklists/code-review.hook.json`, the approved requirements/plan scope, and actual staged/unstaged/untracked changes. Do not review unrelated code or infer changes from summaries.
 2. Record each applicable area as PASS, FAIL, or not applicable with concrete evidence:
 
 | Area | Questions |
