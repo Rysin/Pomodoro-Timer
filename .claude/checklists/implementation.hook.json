@@ -1,0 +1,19 @@
+{
+  "name": "implementation-checklist",
+  "gate": 6,
+  "stage": "Implementation",
+  "pre_check_label": "PRE-CHECK (before starting)",
+  "pre_check": [
+    "security-remediation.md exists and Gate 5 passed",
+    "REPO_URL and FEATURE_BRANCH_NAME provided",
+    "FEATURE_BRANCH_NAME checked out (never main)"
+  ],
+  "post_check_label": "POST-CHECK (before moving to Review)",
+  "post_check": [
+    "Changes implemented on FEATURE_BRANCH_NAME",
+    "Available build/test/lint scripts run if present; otherwise documented as skipped",
+    "npm test and npm run build pass; no nonexistent lint script or test-file type-check is reported as passed",
+    "Approved timer state/deadline behavior, DOM safety, and notification permission/error handling are preserved or intentionally changed per requirements",
+    "Scoped diffs, dependency changes, secret scan results, and test evidence reviewed; applicable guardrails passed and explicit user approval recorded"
+  ]
+}

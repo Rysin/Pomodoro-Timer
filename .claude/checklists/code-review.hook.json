@@ -1,0 +1,17 @@
+{
+  "name": "code-review-checklist",
+  "gate": 7,
+  "stage": "Review",
+  "pre_check_label": "PRE-CHECK (before starting)",
+  "pre_check": [
+    "Gate 6 passed (implementation complete on FEATURE_BRANCH_NAME)"
+  ],
+  "post_check_label": "POST-CHECK (before moving to Verify)",
+  "post_check": [
+    "Code review checklist completed",
+    "Any issues raised during review addressed",
+    "code-review.md contains scoped TypeScript/timer/DOM/notification/test findings with concrete evidence and applicability",
+    "Only code-review.md changed by the reviewer; implementation fixes were routed back and re-reviewed",
+    "Applicable guardrails passed and explicit user approval recorded"
+  ]
+}

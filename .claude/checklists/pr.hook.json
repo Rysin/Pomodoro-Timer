@@ -1,0 +1,18 @@
+{
+  "name": "pr-checklist",
+  "gate": 9,
+  "stage": "PR",
+  "pre_check_label": "PRE-CHECK (before starting)",
+  "pre_check": [
+    "Gate 8 passed (verification.md complete)",
+    "FEATURE_BRANCH_NAME verified (never main); scoped staged/unstaged/untracked secret and dependency checks passed",
+    "Exact commits and PR title/body/base/head shown; explicit publication/creation approval received before push or PR creation"
+  ],
+  "post_check_label": "POST-CHECK (workflow complete)",
+  "post_check": [
+    "PR targets main",
+    "PR description includes Summary, Changes, Evidence, Limitations, Reviewer Checklist",
+    "PR URL and branch/base verified with actual remote tool evidence; an unavailable tool or draft alone is not a created PR",
+    "No direct main push, force-push, or automatic merge occurred"
+  ]
+}

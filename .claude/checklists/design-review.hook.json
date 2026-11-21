@@ -1,0 +1,16 @@
+{
+  "name": "design-review-checklist",
+  "gate": 3,
+  "stage": "Design Review",
+  "pre_check_label": "PRE-CHECK (before starting)",
+  "pre_check": [
+    "architecture.md exists and Gate 2 passed"
+  ],
+  "post_check_label": "POST-CHECK (before moving to Implementation Planning)",
+  "post_check": [
+    "design-review.md includes risks/gaps and decisions",
+    "architecture.md updated if required",
+    "Relevant timing, state, notification, accessibility, and test-design risks have severity and mitigation",
+    "Only design-review.md and required architecture.md updates changed; applicable guardrails passed and explicit user approval recorded"
+  ]
+}
