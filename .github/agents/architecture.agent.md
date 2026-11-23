@@ -12,19 +12,20 @@ OBJECTIVE:
 
 Read requirements.md and propose a solution compatible with the existing Vite + strict TypeScript + plain DOM app.
 
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
 
 INSTRUCTIONS:
 
 1. Input:
 
-requirements.md file from the repo branch.
+`requirements.md` in `ARTIFACT_DIR`.
 
 
 
 2. Output:
 
-You must create new or update existing (if any) architecture.md file in root repo.
+Create or update `architecture.md` inside `ARTIFACT_DIR`.
 
 
 

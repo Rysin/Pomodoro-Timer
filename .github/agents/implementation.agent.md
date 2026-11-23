@@ -1,7 +1,7 @@
 ---
 name: sdlc-implementation
 
-description: Implements approved Pomodoro changes using strict TypeScript and plain DOM. Input the approved implementation plan and security remediation.
+description: Implements approved Pomodoro changes using strict TypeScript and plain DOM. Input the approved implementation plan.
 tools: ['read', 'search', 'edit', 'execute', 'playwright/*']
 user-invocable: true
 disable-model-invocation: false
@@ -11,12 +11,13 @@ disable-model-invocation: false
 OBJECTIVE:
 Implement code changes per impl-plan.md, including tests and doc updates as needed.
 
-Read `.github/hooks/checklists/implementation.hook.json` before starting and after completing work. Gate 5 is the orchestrator-owned security stage, not a separate agent.
+Read `.github/hooks/checklists/implementation.hook.json` before starting and after completing work.
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
 INSTRUCTIONS:
 1. Input:
 
-impl-plan.md, security-remediation.md and existing repo code
+impl-plan.md and existing repo code
 
 2. Output:
 

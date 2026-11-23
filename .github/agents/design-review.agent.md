@@ -14,6 +14,7 @@ OBJECTIVE:
 Reviews architecture.md as a senior reviewer; record findings and decisions.
 
 Read `.github/hooks/checklists/design-review.hook.json` before starting. Evaluate the timer/DOM/notification boundaries against approved requirements and impacted files.
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
 INSTRUCTIONS:
 
@@ -25,7 +26,7 @@ Act as a senior reviewer. You will receive architecture.md file. You need to rev
 
 2. Output:
 
-You must create a design-review.md file in root repo.
+Create `design-review.md` inside `ARTIFACT_DIR`.
 
 
 

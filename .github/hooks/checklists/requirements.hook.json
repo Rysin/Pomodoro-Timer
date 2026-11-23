@@ -4,13 +4,14 @@
   "stage": "Requirements",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "JIRA_STORY_URL provided by user"
+    "JIRA_STORY_URL provided by user",
+    "The run's ARTIFACT_DIR exists and was created as a new repository-root artifacts-<yyyy-mm-dd-hh-mm> folder"
   ],
   "post_check_label": "POST-CHECK (before moving to Architecture)",
   "post_check": [
-    "requirements.md includes: scope, FR/NFR, acceptance criteria",
+    "ARTIFACT_DIR/requirements.md includes: scope, FR/NFR, acceptance criteria",
     "Open questions resolved or explicitly deferred",
     "Existing Pomodoro behavior is distinguished from story-supported changes; no invented framework migration or acceptance criteria",
-    "Only requirements.md changed in this stage; applicable guardrails passed and explicit user approval recorded"
+    "Only ARTIFACT_DIR/requirements.md changed in this stage; applicable guardrails passed and explicit user approval recorded"
   ]
 }

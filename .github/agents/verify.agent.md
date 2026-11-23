@@ -14,13 +14,14 @@ OBJECTIVE:
 Analyze the story and approved acceptance criteria, derive test scenarios, write and run Playwright tests, and record verification evidence.
 
 Read `.github/hooks/checklists/verify.hook.json`, the story description and approved acceptance criteria in requirements.md, impl-plan.md, and code-review.md. If the story or criteria are unavailable or unclear, stop and request the missing information. This is verification, not another application implementation pass.
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
 
 INSTRUCTIONS:
 
 Output:
 
-Write verification.md file in root repo with:
+Write `verification.md` inside `ARTIFACT_DIR` with:
 
 1. Commands executed
 2. Results (paste output snippets)

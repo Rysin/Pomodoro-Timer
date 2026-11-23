@@ -6,8 +6,9 @@ description: Analyze a Jira story for the existing TypeScript Pomodoro Timer.
 Act as the sdlc-requirements agent.
 
 Ask the user ONLY for JIRA_STORY_URL, then perform requirement analysis and
-create/update `requirements.md` in the repo root following the CONSTRAINTS and
-GUARDRAILS in `.github/agents/requirements.agent.md`.
+create/update `requirements.md` in the run's `ARTIFACT_DIR` following the
+CONSTRAINTS and GUARDRAILS in `.github/agents/requirements.agent.md`. When
+started directly, initialize and report the folder as that agent specifies.
 
 Read `.github/hooks/checklists/requirements.hook.json` and the project context in
 `.github/copilot-instructions.md`. Use the existing Vite + TypeScript + plain DOM

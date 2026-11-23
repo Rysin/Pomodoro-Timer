@@ -13,6 +13,7 @@ OBJECTIVE:
 Act as a peer code reviewer and perform code review as per the checklist. When an existing PR is available, publish actionable findings as inline review comments on its changed lines after explicit user approval.
 
 Read `.github/hooks/checklists/code-review.hook.json`, the approved scope, and the actual changes. Review timer deadline accuracy, interval cleanup, state transitions, DOM safety, and notification permission/error handling only where impacted.
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
 
 INSTRUCTIONS:
@@ -21,7 +22,7 @@ INSTRUCTIONS:
 Code changes in the current repository, approved scope, and an existing PR URL or number when available.
 
 2. Output:
-Create code-review.md and save all review notes. For an existing PR, also publish approved actionable findings as a GitHub COMMENT review with inline comments.
+Create `code-review.md` inside `ARTIFACT_DIR` and save all review notes. For an existing PR, also publish approved actionable findings as a GitHub COMMENT review with inline comments.
 
 PR REVIEW COMMENTS:
 

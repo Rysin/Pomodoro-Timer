@@ -15,6 +15,8 @@ Perform requirement analysis of Jira user story and document the functional and 
 
 Read `.github/hooks/checklists/requirements.hook.json` and project context in `.github/copilot-instructions.md` before starting. Treat existing behavior as the baseline, not as invented story acceptance criteria.
 
+Use the `ARTIFACT_DIR` supplied by the orchestrator for every artifact in this run. When started directly without an orchestrator, initialize one repository-root folder once using the creation and collision rules in `.github/skills/orchestration/SKILL.md`; retain and report its path for any later handoff.
+
 
 Prompt:
 
@@ -34,7 +36,7 @@ You will receive Jira story link from user. You need to go through the story and
 
 2. Output:
 
-You must create new or update existing (if any) requirements.md file in root repo.
+Create or update `requirements.md` inside `ARTIFACT_DIR`.
 
 
 CONSTRAINTS:

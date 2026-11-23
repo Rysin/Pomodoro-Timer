@@ -149,7 +149,11 @@ Inputs:
 
 
 
-Artifact files (repo root; create only when the stage runs):
+Artifact files (inside the current run's repository-root `ARTIFACT_DIR`; create each file only when its stage runs):
+
+1. At full pipeline start, generate one folder name using the local start time and `Get-Date -Format 'yyyy-MM-dd-HH-mm'`: `artifacts-<yyyy-mm-dd-hh-mm>`. Create it in the repository root without overwriting an existing folder; if creation fails or the name already exists, stop and report the blocker.
+2. Record the exact repository-root-relative folder path as `ARTIFACT_DIR` in the pipeline state and every stage handoff. Reuse it for retries, approvals, and resumed stages; never regenerate it or select the latest folder. If it is missing or ambiguous on resume, stop and ask for the original path.
+3. Every pipeline artifact reference below and in stage instructions and checklists refers to a file inside that same `ARTIFACT_DIR`. Application code, approved tests, and other non-artifact outputs remain at their approved paths.
 
 1. requirements.md
 
@@ -271,7 +275,7 @@ Shared skills / expectations:
 
 Custom Instructions:
 
-1. Scoped `.instructions.md` files live under `.github/instructions/` and apply via their `applyTo` glob (TypeScript source, HTML, stylesheets, tests, and root SDLC artifact files).
+1. Scoped `.instructions.md` files live under `.github/instructions/` and apply via their `applyTo` glob (TypeScript source, HTML, stylesheets, tests, and SDLC artifact files).
 
 2. Scoped instructions refine but never override this file for files outside their glob — see Skills vs Instructions below for precedence when guidance conflicts.
 
@@ -328,7 +332,7 @@ Memory Types:
 | User memory | Cross-workspace, persistent | Host-provided memory, when available | Durable, non-sensitive workflow preferences |
 | Session memory | Current conversation only | Host session state | In-progress stage notes, pending approvals |
 | Repository memory | This repo, persistent | Host repository memory or these instructions | Verified commands and repo conventions |
-| Task/project memory | This pipeline run | Root artifact files (`requirements.md` ... `verification.md`) | The SDLC state itself — source of truth for stage handoffs |
+| Task/project memory | This pipeline run | Artifact files in `ARTIFACT_DIR` (`requirements.md` ... `verification.md`) | The SDLC state itself — source of truth for stage handoffs |
 
 Rule: use available repository memory and these project instructions before asking about known conventions. Do not assume filesystem memory paths exist or store sensitive/task-specific data in persistent memory.
 

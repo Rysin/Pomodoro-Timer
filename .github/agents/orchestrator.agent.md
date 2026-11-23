@@ -34,6 +34,10 @@ Staged Question Policy:
 
   - Suggested commit message per stage
 
+  - One repository-root `ARTIFACT_DIR` for this run, created at workflow start as described in `.github/copilot-instructions.md`
+
+Create the folder once using the local start time, and pass its exact path to every stage, including the orchestrator-owned security stage. Retain the path across approvals, retries, branch switching, and resumed sessions. Do not reuse an existing folder, infer a folder by recency, or continue if its creation fails or the run's path is unavailable. Keep the uncommitted Stage 1-4 artifacts in this folder when safely switching to the feature branch.
+
 
 
 Human Approval Policy (MANDATORY):

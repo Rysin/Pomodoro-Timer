@@ -14,6 +14,7 @@ OBJECTIVE:
 Prepare and, only after explicit approval, create the Pull Request targeting main. Use existing docs; do not invent a changelog file.
 
 Read `.github/hooks/checklists/pr.hook.json`, code-review.md, verification.md, the feature-branch diff, and package changes. Do not fabricate GitHub URLs or CI results when tooling is unavailable.
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
 
 INSTRUCTIONS:

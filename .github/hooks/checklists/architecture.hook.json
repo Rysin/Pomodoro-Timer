@@ -4,14 +4,14 @@
   "stage": "Architecture",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "requirements.md exists and Gate 1 passed"
+    "ARTIFACT_DIR/requirements.md exists and Gate 1 passed"
   ],
   "post_check_label": "POST-CHECK (before moving to Design Review)",
   "post_check": [
-    "architecture.md identifies impacted components/files",
+    "ARTIFACT_DIR/architecture.md identifies impacted components/files",
     "Includes approach for styling/structure and a11y considerations for UI work",
     "Uses the existing TypeScript timer/DOM/notification boundaries and identifies affected HTML/CSS/tests/docs",
     "Relevant timer transitions, permission/error behavior, and dependency decisions are explicit",
-    "Only architecture.md changed; applicable guardrails passed and explicit user approval recorded"
+    "Only ARTIFACT_DIR/architecture.md changed; applicable guardrails passed and explicit user approval recorded"
   ]
 }

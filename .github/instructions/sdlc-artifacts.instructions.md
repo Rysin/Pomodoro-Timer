@@ -1,6 +1,6 @@
 ---
 description: Concise, approval-gated SDLC artifacts for the Pomodoro project.
-applyTo: "{requirements,architecture,design-review,impl-plan,security-remediation,code-review,verification}.md"
+applyTo: "artifacts-*/{requirements,architecture,design-review,impl-plan,security-remediation,code-review,verification}.md"
 ---
 
 # SDLC artifact file conventions

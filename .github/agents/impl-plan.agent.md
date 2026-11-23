@@ -12,6 +12,7 @@ OBJECTIVE:
 Create a dependency-ordered implementation plan derived from the approved architecture.
 
 Read `.github/hooks/checklists/impl-plan.hook.json`, approved architecture.md, and design-review.md. Inspect the existing source/test files and package scripts before planning changes.
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
 INSTRUCTIONS:
 
@@ -19,7 +20,7 @@ INSTRUCTIONS:
 You will receive architecture.md file. You need to review it to break the approved architecture down into a prioritized, dependency-ordered task list.
 
 2. Output:
-Document the plan in impl-plan.md, ordered by dependency in root repo.
+Document the plan in `ARTIFACT_DIR/impl-plan.md`, ordered by dependency.
 
 CONSTRAINTS:
 
