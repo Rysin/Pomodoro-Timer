@@ -1,13 +1,13 @@
 ---
 description: Concise, approval-gated SDLC artifact conventions for the Pomodoro project.
 paths:
-  - "requirements.md"
-  - "architecture.md"
-  - "design-review.md"
-  - "impl-plan.md"
-  - "security-remediation.md"
-  - "code-review.md"
-  - "verification.md"
+  - "artifacts-*/requirements.md"
+  - "artifacts-*/architecture.md"
+  - "artifacts-*/design-review.md"
+  - "artifacts-*/impl-plan.md"
+  - "artifacts-*/security-remediation.md"
+  - "artifacts-*/code-review.md"
+  - "artifacts-*/verification.md"
 ---
 
 # SDLC artifact conventions

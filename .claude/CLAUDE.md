@@ -109,7 +109,11 @@ Confirm every command succeeded; an empty result after a failed command is not a
 
 ## Stage artifacts
 
-Create these root-level files only when their owning stage runs:
+At full pipeline start, create one repository-root `artifacts-<yyyy-mm-dd-hh-mm>` folder using local time and `Get-Date -Format 'yyyy-MM-dd-HH-mm'`. Create it without overwriting an existing folder; if creation fails or the name already exists, stop and report the blocker.
+
+Record the exact repository-root-relative path as `ARTIFACT_DIR` in pipeline state and every stage handoff. Reuse it for retries, approvals, branch switching, and resumed stages; never regenerate it or select the latest folder. If it is missing or ambiguous on resume, stop and ask for the original path. Preserve the uncommitted Stage 1–4 drafts in this folder when safely switching to the feature branch.
+
+All stage artifact references in this file, agents, skills, and checklists refer to files inside that same `ARTIFACT_DIR`. Application code, approved tests, and other non-artifact outputs remain at their approved paths. Create each of these files only when its owning stage runs:
 
 1. `requirements.md`
 2. `architecture.md`

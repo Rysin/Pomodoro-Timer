@@ -8,11 +8,11 @@
   ],
   "post_check_label": "POST-CHECK (before moving to PR)",
   "post_check": [
-    "verification.md maps story acceptance criteria to scenarios, expected results, and actual test or manual evidence; happy paths and applicable negative/edge cases are covered, and non-applicable cases are explained",
+    "ARTIFACT_DIR/verification.md maps story acceptance criteria to scenarios, expected results, and actual test or manual evidence; happy paths and applicable negative/edge cases are covered, and non-applicable cases are explained",
     "Scoped Playwright tests have been written and run successfully; exact commands and results are recorded. Missing tooling or unexecuted/failed required tests block the gate",
     "npm test and npm run build results are recorded and passing; acceptance criteria map to actual evidence",
     "Relevant manual/browser checks are distinguished from not-run checks; any unmet acceptance criterion blocks the gate",
-    "Only verification.md and approved, scoped Playwright test files changed in this stage; test changes were reviewed and approved, and application/infrastructure fixes were routed back",
+    "Only ARTIFACT_DIR/verification.md and approved, scoped Playwright test files changed in this stage; test changes were reviewed and approved, and application/infrastructure fixes were routed back",
     "Applicable guardrails passed and explicit user approval recorded"
   ]
 }

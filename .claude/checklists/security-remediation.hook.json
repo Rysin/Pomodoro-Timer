@@ -4,7 +4,7 @@
   "stage": "Security Remediation",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "impl-plan.md exists and Gate 4 passed",
+    "ARTIFACT_DIR/impl-plan.md exists and Gate 4 passed",
     "REPO_URL and FEATURE_BRANCH_NAME provided",
     "Orchestrator owns this stage using the security-remediation skill",
     "Supplied repository verified and non-main feature branch selected before scoped scans or edits"
@@ -12,7 +12,7 @@
   "post_check_label": "POST-CHECK (before moving to Implementation)",
   "post_check": [
     "FEATURE_BRANCH_NAME checked out (created if it did not exist; never main), verified via git branch --show-current",
-    "security-remediation.md documents identified vulnerabilities and fixes applied",
+    "ARTIFACT_DIR/security-remediation.md documents identified vulnerabilities and fixes applied",
     "No unresolved vulnerabilities remain in scope",
     "Secret scan run against unstaged/staged diffs and scoped untracked files; matches classified without leaking values, suspected secrets resolved",
     "Dependency guardrail run; any new/changed dependency in package.json/lockfiles is called out and approved",

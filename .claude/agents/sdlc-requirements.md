@@ -11,9 +11,11 @@ Analyze the user-provided Jira story and document its functional and non-functio
 
 Read `.claude/checklists/requirements.hook.json` and project context in `.claude/CLAUDE.md`. Treat existing application behavior as baseline, not as story acceptance criteria. Use the configured Jira integration if available; if inaccessible, immediately ask the user to paste the description and acceptance criteria.
 
+Use the `ARTIFACT_DIR` supplied by the orchestrator for every artifact in this run. When started directly without an orchestrator, initialize one repository-root folder once using the creation and collision rules in `.claude/skills/orchestration/SKILL.md`; retain and report its path for any later handoff.
+
 # Output and constraints
 
-Create or update only root `requirements.md`. Include:
+Create or update only `requirements.md` inside `ARTIFACT_DIR`. Include:
 
 1. Problem statement; in-scope and out-of-scope items.
 2. Functional requirements (`FR-1…`) and non-functional requirements (`NFR-1…`).

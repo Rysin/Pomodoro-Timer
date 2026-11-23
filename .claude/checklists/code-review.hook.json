@@ -10,8 +10,8 @@
   "post_check": [
     "Code review checklist completed",
     "Any issues raised during review addressed",
-    "code-review.md contains scoped TypeScript/timer/DOM/notification/test findings with concrete evidence and applicability",
-    "Only code-review.md changed by the reviewer; implementation fixes were routed back and re-reviewed",
+    "ARTIFACT_DIR/code-review.md contains scoped TypeScript/timer/DOM/notification/test findings with concrete evidence and applicability",
+    "Only ARTIFACT_DIR/code-review.md changed by the reviewer; implementation fixes were routed back and re-reviewed",
     "Applicable guardrails passed and explicit user approval recorded"
   ]
 }

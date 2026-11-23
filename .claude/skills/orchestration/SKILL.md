@@ -8,6 +8,8 @@ description: Coordinates the approved TypeScript Pomodoro SDLC with explicit sta
 1. Read `.claude/CLAUDE.md`. For the full pipeline, ask only for `JIRA_STORY_URL` at intake. If Jira cannot be read, immediately request pasted description and acceptance criteria.
 2. Do not ask for `REPO_URL` or `FEATURE_BRANCH_NAME` until immediately before Stage 5.
 3. Read each stage checklist before starting and before handing off. Checklists are guidance files, not automatically executed hooks.
+4. At workflow start, create one repository-root `artifacts-<yyyy-mm-dd-hh-mm>` folder using local time and `Get-Date -Format 'yyyy-MM-dd-HH-mm'`. Use `New-Item -ItemType Directory -Path <path> -ErrorAction Stop` without `-Force`; if the path already exists or creation fails, stop and report the blocker. Record its repository-root-relative path as `ARTIFACT_DIR` and include it in every handoff. Reuse that exact path for the entire run, including retries, approvals, branch switching, and resumption; do not infer it from the newest folder. If the run's path is unavailable on resume, stop and ask for it.
+5. All Markdown outputs in the table are inside `ARTIFACT_DIR`; source code, approved tests, and other non-artifact outputs remain at their approved paths. Create each Markdown artifact only when its stage runs. Preserve the Stage 1–4 drafts in this folder when safely switching to the feature branch.
 
 | Gate | Owner | Checklist | Output |
 | --- | --- | --- | --- |

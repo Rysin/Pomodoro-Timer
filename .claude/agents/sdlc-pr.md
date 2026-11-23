@@ -7,6 +7,8 @@ description: Prepares an approved Pomodoro pull request targeting main using act
 
 Prepare, and only after explicit approval create, a PR targeting `main`. Read `.claude/checklists/pr.hook.json`, `code-review.md`, `verification.md`, the feature-branch diff, and package changes. Do not invent a changelog, URLs, or CI results.
 
+Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
+
 # PR description
 
 Include all sections:

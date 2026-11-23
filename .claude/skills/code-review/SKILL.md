@@ -5,6 +5,8 @@ description: Reviews changed Pomodoro TypeScript, DOM, notifications, and Vitest
 
 # Review procedure
 
+Read and write stage Markdown artifacts in the `ARTIFACT_DIR` provided in the handoff; stop and request the run's exact path if it is missing or ambiguous.
+
 1. Read `.claude/checklists/code-review.hook.json`, approved requirements/plan scope, and actual staged/unstaged/untracked changes. Do not review unrelated code or infer changes from summaries.
 2. Record each applicable area as PASS, FAIL, or not applicable with concrete evidence:
 

@@ -4,14 +4,14 @@
   "stage": "Implementation Planning",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "design-review.md exists and Gate 3 passed"
+    "ARTIFACT_DIR/design-review.md exists and Gate 3 passed"
   ],
   "post_check_label": "POST-CHECK (before moving to orchestrator-owned Security Remediation)",
   "post_check": [
-    "impl-plan.md is dependency ordered",
-    "impl-plan.md includes a verification approach",
+    "ARTIFACT_DIR/impl-plan.md is dependency ordered",
+    "ARTIFACT_DIR/impl-plan.md includes a verification approach",
     "Tasks list exact impacted files and map acceptance criteria to Vitest tests, Playwright scenarios/tests, and relevant manual browser checks",
     "Verification includes npm test, npm run build, and Playwright execution; missing tooling, test discovery compatibility, and dependency proposals are explicitly documented",
-    "Only impl-plan.md changed; applicable guardrails passed and explicit user approval recorded"
+    "Only ARTIFACT_DIR/impl-plan.md changed; applicable guardrails passed and explicit user approval recorded"
   ]
 }

@@ -5,6 +5,8 @@ description: Implements approved Pomodoro changes with strict TypeScript, plain 
 
 # Implementation procedure
 
+Read all stage Markdown artifacts from the `ARTIFACT_DIR` provided in the handoff; stop and request the run's exact path if it is missing or ambiguous.
+
 1. Read `.claude/checklists/implementation.hook.json`, `impl-plan.md`, `security-remediation.md`, matching `.claude/rules/`, and impacted source/test files.
 2. Require the supplied `REPO_URL` and `FEATURE_BRANCH_NAME`. Run `git status --short` and `git branch --show-current`; block if the branch differs or is `main`. Stage 5 should have selected it; do not fetch/switch/reset automatically here.
 3. Inspect `package.json` and `tsconfig.json`. Do not install dependencies unless missing packages block a required command or an approved manifest change needs installation.
