@@ -26,3 +26,6 @@ dist-ssr
 *.sw?
 .playwright-mcp
 /run-local.bat
+artifacts*
+docs/
+.mcp.json

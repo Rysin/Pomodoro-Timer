@@ -7,27 +7,26 @@
 3. `src/main.ts` owns typed DOM queries, rendering, controls, visibility refresh, and user-facing notification errors.
 4. `src/notifications.ts` owns browser capability checks, permission requests, and phase-completion notifications.
 5. `index.html` is the semantic page structure; `src/style.css` is the responsive presentation.
-6. `tests/timer.test.ts` and `tests/notifications.test.ts` use Vitest fake timers, controlled system time, and browser-global mocks.
+6. Vitest (`npm test`, default `*.test`/`*.spec` discovery) is installed, but no Vitest test files currently exist in the working tree, so `npm test` exits 1 with "No test files found". Playwright browser tests live in `tests/*.pw.ts` (currently `tests/tagline-link.pw.ts`) and run with `npm run test:pw`. Treat the working tree as authoritative for the test inventory.
 7. `package.json`, `package-lock.json`, and `tsconfig.json` define tooling and strict type-checking. Change them only for an approved, scoped reason.
 8. Preserve 25-minute work / 5-minute break durations, manual next-phase starts, and incrementing the counter only on work completion unless approved requirements change them.
 9. Pause preserves remaining time; reset restores the current phase without clearing the count. Reload resets the count. Notifications are opt-in and only work while the page can run.
 10. Compute remaining time from a deadline, not interval tick counts. Preserve `ReturnType<typeof setInterval> | null`, duplicate-start protection, cleanup, and pause-at-zero completion.
 11. Follow extensionless imports, single-quoted TypeScript strings, no semicolons, type-only imports, and explicit DOM guards. Avoid `any`, unchecked assertions, and constructor parameter properties unsupported by `erasableSyntaxOnly`.
-12. There is no framework, backend, database, persistence layer, UI library, lint script, or browser automation dependency. Do not introduce one unless approved requirements need it.
+12. There is no framework, backend, database, persistence layer, UI library, or lint script. The only browser automation dependency is `@playwright/test` (see `playwright.config.ts`, `npm run test:pw`). Do not introduce anything else unless approved requirements need it.
 
 ## Commands and evidence
 
 | Purpose | Command |
 | --- | --- |
 | Local development | `npm run dev` |
-| Targeted timer tests | `npm test -- tests/timer.test.ts` |
-| Targeted notification tests | `npm test -- tests/notifications.test.ts` |
-| All existing tests | `npm test` |
+| Vitest unit tests (none exist yet; exits 1 with "No test files found") | `npm test` |
+| Playwright browser tests (`tests/*.pw.ts`) | `npm run test:pw` |
 | Type-check application and build | `npm run build` |
 | Preview production build | `npm run preview` |
 
-1. Read `package.json` before running scripts. There is no lint script or browser automation dependency currently.
-2. `npm run build` type-checks `src`, not `tests`; Vitest execution is not a test-file type-check. Do not claim broader coverage.
+1. Read `package.json` before running scripts. There is no lint script; Playwright is the only browser automation dependency.
+2. `npm run build` type-checks `src`, not `tests`; Vitest and Playwright execution are not test-file type-checks. Do not claim broader coverage.
 3. Run `npm ci` only when dependencies need restoring and a lockfile exists. Dependency changes require explicit approval; do not add tooling just to satisfy a nonexistent script.
 4. Use Windows PowerShell-compatible commands. Do not use shell `||` / `&&` branch fallbacks; issue branch switches separately and verify the result.
 5. Record actual commands, outputs, and browser checks. Missing tools or denied permissions are limitations, not fabricated passes.
