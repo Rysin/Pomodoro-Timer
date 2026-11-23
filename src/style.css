@@ -1,5 +1,6 @@
 :root {
   --primary-button-color: #000080;
+  --focus-ring-color: #d78058;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   color: #23332d;
   background: #f5f2eb;
@@ -10,7 +11,7 @@
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 280px; }
 button { font: inherit; cursor: pointer; }
-button:focus-visible { outline: 3px solid #d78058; outline-offset: 3px; }
+button:focus-visible { outline: 3px solid var(--focus-ring-color); outline-offset: 3px; }
 button:disabled { cursor: not-allowed; opacity: .48; }
 
 .app { width: min(100% - 32px, 620px); margin: 0 auto; padding: 70px 0 42px; }
@@ -18,6 +19,10 @@ button:disabled { cursor: not-allowed; opacity: .48; }
 .eyebrow { color: #a5583c; font-size: .7rem; font-weight: 750; letter-spacing: .16em; }
 h1 { margin: 12px 0 8px; font-family: Georgia, serif; font-size: clamp(2.4rem, 7vw, 3.5rem); font-weight: 500; }
 .heading > p:last-child, .footnote { color: #69776f; }
+.tagline-link { color: inherit; text-decoration: underline; text-underline-offset: .2em; border-radius: 2px; }
+.tagline-link:hover { text-decoration-thickness: 2px; }
+.tagline-link:active { opacity: .8; }
+.tagline-link:focus-visible { outline: 3px solid var(--focus-ring-color); outline-offset: 3px; }
 .timer-card { background: #fffefa; border: 1px solid #e8e4da; border-radius: 24px; padding: 42px 24px 28px; text-align: center; box-shadow: 0 18px 50px #3044360c; }
 .phase { display: inline-block; margin: 0; padding: 7px 14px; border-radius: 99px; background: #f8ece5; color: #a35236; font-size: .8rem; font-weight: 700; }
 .clock { margin: 18px 0 4px; font-size: clamp(4.5rem, 20vw, 7rem); font-weight: 300; line-height: 1.15; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
