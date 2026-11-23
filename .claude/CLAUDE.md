@@ -42,11 +42,10 @@ The full Jira workflow is coordinated by the `sdlc-orchestrator` agent. The `/re
 | 2 | Architecture | `sdlc-architecture` | `.claude/checklists/architecture.hook.json` | `architecture.md` |
 | 3 | Design Review | `sdlc-design-review` | `.claude/checklists/design-review.hook.json` | `design-review.md`; `architecture.md` if needed |
 | 4 | Implementation Planning | `sdlc-impl-plan` | `.claude/checklists/impl-plan.hook.json` | `impl-plan.md` |
-| 5 | Security Remediation | Orchestrator using `.claude/skills/security-remediation/SKILL.md` | `.claude/checklists/security-remediation.hook.json` | `security-remediation.md`; approved scoped fixes |
-| 6 | Implementation | `sdlc-implementation` | `.claude/checklists/implementation.hook.json` | Scoped code, tests, and docs |
-| 7 | Review | `sdlc-code-review` | `.claude/checklists/code-review.hook.json` | `code-review.md` |
-| 8 | Verify | `sdlc-verify` | `.claude/checklists/verify.hook.json` | `verification.md`; approved scoped Playwright tests |
-| 9 | PR | `sdlc-pr` | `.claude/checklists/pr.hook.json` | Approved PR targeting `main` |
+| 5 | Implementation | `sdlc-implementation` | `.claude/checklists/implementation.hook.json` | Scoped code, tests, and docs |
+| 6 | Review | `sdlc-code-review` | `.claude/checklists/code-review.hook.json` | `code-review.md` |
+| 7 | Verify | `sdlc-verify` | `.claude/checklists/verify.hook.json` | `verification.md`; approved scoped Playwright tests |
+| 8 | PR | `sdlc-pr` | `.claude/checklists/pr.hook.json` | Approved PR targeting `main` |
 
 Stages must run in this order. A checklist PASS is not user approval. These JSON files are manually read gate checklists, not executable Claude Code hooks; this repository does not configure runtime hook enforcement, CI, or Jira tooling. If Claude integrations are unavailable, record the blocker rather than claiming success.
 
@@ -70,11 +69,11 @@ A direct, explicitly scoped maintenance request need not launch the Jira pipelin
 
 ## Branch, scope, dependency, and secret guardrails
 
-These are mandatory for the Jira pipeline. Before every application/configuration edit in the pipeline and before every commit, run `git branch --show-current`; it must equal the user-provided `FEATURE_BRANCH_NAME` and must not be `main`. Stages 1–4 may draft only their designated, uncommitted planning artifacts. Stage 5 safely creates or switches to the exact feature branch before scoped scans or fixes; preserve unrelated work and never reset, force-switch, or overwrite conflicting changes.
+These are mandatory for the Jira pipeline. Before every application/configuration edit in the pipeline and before every commit, run `git branch --show-current`; it must equal the user-provided `FEATURE_BRANCH_NAME` and must not be `main`. Stages 1–4 may draft only their designated, uncommitted planning artifacts. Immediately before Stage 5, the orchestrator verifies the repository and safely creates or switches to the exact feature branch; preserve unrelated work and never reset, force-switch, or overwrite conflicting changes.
 
 Publish only `FEATURE_BRANCH_NAME` and create a PR targeting `main`; never push directly to `main`. Only stage-owned artifacts may change. Application/configuration edits must be listed in `architecture.md` and `impl-plan.md`; document proposed scope expansions and obtain explicit approval before editing. Any new dependency requires explicit user approval in that stage.
 
-Before every commit, and during Security Remediation, Implementation, and PR, inspect staged/unstaged diffs and scoped untracked files for `api[_-]?key|secret|password|token|BEGIN (RSA|PRIVATE) KEY` (case-insensitive). Classify every match privately: legitimate names and pattern documentation are not secrets; suspected values block the gate. Never copy suspected values into artifacts or logs.
+Before every commit, and during Implementation and PR, inspect staged/unstaged diffs and scoped untracked files for `api[_-]?key|secret|password|token|BEGIN (RSA|PRIVATE) KEY` (case-insensitive). Classify every match privately: legitimate names and pattern documentation are not secrets; suspected values block the gate. Never copy suspected values into artifacts or logs.
 
 Use PowerShell and the exact approved impacted paths. Example checks (replace placeholders with the actual user-provided branch and approved paths):
 
@@ -119,9 +118,8 @@ All stage artifact references in this file, agents, skills, and checklists refer
 2. `architecture.md`
 3. `design-review.md`
 4. `impl-plan.md`
-5. `security-remediation.md`
-6. `code-review.md` (Review stage)
-7. `verification.md`
+5. `code-review.md` (Review stage)
+6. `verification.md`
 
 Checklist POST checks are the acceptance contract for each gate. The owning agent must read its role, relevant checklist, and required prior artifacts before starting and before advancing. Record PASS/FAIL, reasons, evidence, and the next action. Use actual outputs; distinguish pass, fail, not applicable, and not run.
 

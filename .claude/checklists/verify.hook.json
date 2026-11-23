@@ -1,10 +1,10 @@
 {
   "name": "verify-checklist",
-  "gate": 8,
+  "gate": 7,
   "stage": "Verify",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "Gate 7 passed (review issues addressed)"
+    "Gate 6 passed (review issues addressed)"
   ],
   "post_check_label": "POST-CHECK (before moving to PR)",
   "post_check": [

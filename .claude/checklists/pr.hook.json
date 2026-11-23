@@ -1,10 +1,10 @@
 {
   "name": "pr-checklist",
-  "gate": 9,
+  "gate": 8,
   "stage": "PR",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "Gate 8 passed (ARTIFACT_DIR/verification.md complete)",
+    "Gate 7 passed (ARTIFACT_DIR/verification.md complete)",
     "FEATURE_BRANCH_NAME verified (never main); scoped staged/unstaged/untracked secret and dependency checks passed",
     "Exact commits and PR title/body/base/head shown; explicit publication/creation approval received before push or PR creation"
   ],

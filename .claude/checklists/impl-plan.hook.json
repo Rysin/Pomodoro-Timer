@@ -6,7 +6,7 @@
   "pre_check": [
     "ARTIFACT_DIR/design-review.md exists and Gate 3 passed"
   ],
-  "post_check_label": "POST-CHECK (before moving to orchestrator-owned Security Remediation)",
+  "post_check_label": "POST-CHECK (before moving to Implementation)",
   "post_check": [
     "ARTIFACT_DIR/impl-plan.md is dependency ordered",
     "ARTIFACT_DIR/impl-plan.md includes a verification approach",

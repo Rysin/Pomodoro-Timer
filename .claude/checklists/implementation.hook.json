@@ -1,10 +1,10 @@
 {
   "name": "implementation-checklist",
-  "gate": 6,
+  "gate": 5,
   "stage": "Implementation",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "ARTIFACT_DIR/security-remediation.md exists and Gate 5 passed",
+    "ARTIFACT_DIR/impl-plan.md exists and Gate 4 passed",
     "REPO_URL and FEATURE_BRANCH_NAME provided",
     "FEATURE_BRANCH_NAME checked out (never main)"
   ],

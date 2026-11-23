@@ -17,11 +17,10 @@ description: Coordinates the approved TypeScript Pomodoro SDLC with explicit sta
 | 2 | `sdlc-architecture` | `architecture.hook.json` | `architecture.md` |
 | 3 | `sdlc-design-review` | `design-review.hook.json` | `design-review.md`; architecture update if needed |
 | 4 | `sdlc-impl-plan` | `impl-plan.hook.json` | `impl-plan.md` |
-| 5 | Orchestrator using security-remediation skill | `security-remediation.hook.json` | `security-remediation.md`; approved scoped fixes |
-| 6 | `sdlc-implementation` | `implementation.hook.json` | Scoped code, tests, docs |
-| 7 | `sdlc-code-review` | `code-review.hook.json` | `code-review.md` |
-| 8 | `sdlc-verify` | `verify.hook.json` | `verification.md`; approved scoped Playwright tests |
-| 9 | `sdlc-pr` | `pr.hook.json` | Approved PR targeting `main` |
+| 5 | `sdlc-implementation` | `implementation.hook.json` | Scoped code, tests, docs |
+| 6 | `sdlc-code-review` | `code-review.hook.json` | `code-review.md` |
+| 7 | `sdlc-verify` | `verify.hook.json` | `verification.md`; approved scoped Playwright tests |
+| 8 | `sdlc-pr` | `pr.hook.json` | Approved PR targeting `main` |
 
 Checklist files live under `.claude/checklists/`.
 
@@ -34,9 +33,9 @@ Checklist files live under `.claude/checklists/`.
 5. After approval, report PASS/FAIL, reasons, and next action. Suggest commit messages only; commits/publication need separate approval.
 6. A passing test suite without user approval leaves the stage pending.
 
-# Stage 5 and publication
+# Implementation intake and publication
 
-1. Ask only for `REPO_URL` and `FEATURE_BRANCH_NAME`. Verify the repository and safely create/switch to that exact non-main branch.
-2. Read `.claude/skills/security-remediation/SKILL.md`, run its scoped checks, write the artifact, and await approval.
+1. Immediately before Implementation, ask only for `REPO_URL` and `FEATURE_BRANCH_NAME`. Verify the repository and safely create/switch to that exact non-main branch, preserving existing work and the planning artifacts.
+2. Hand off the approved plan, repository, branch, and `ARTIFACT_DIR` to Implementation.
 3. Before publication, show exact commits and complete PR title/body/base/head; await explicit approval before push or PR creation. Never push to `main` or merge automatically.
 4. If any capability/check is unavailable, record the blocker and stop rather than claiming success.

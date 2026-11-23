@@ -1,10 +1,10 @@
 {
   "name": "code-review-checklist",
-  "gate": 7,
+  "gate": 6,
   "stage": "Review",
   "pre_check_label": "PRE-CHECK (before starting)",
   "pre_check": [
-    "Gate 6 passed (implementation complete on FEATURE_BRANCH_NAME)"
+    "Gate 5 passed (implementation complete on FEATURE_BRANCH_NAME)"
   ],
   "post_check_label": "POST-CHECK (before moving to Verify)",
   "post_check": [
