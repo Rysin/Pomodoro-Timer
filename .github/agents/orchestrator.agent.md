@@ -1,7 +1,7 @@
 ---
 name: sdlc-orchestrator
 
-description: Coordinates the gated Pomodoro TypeScript SDLC with an orchestrator-owned security stage. Input a Jira story URL.
+description: Coordinates the gated Pomodoro TypeScript SDLC with an orchestrator-owned stages. Input a Jira story URL.
 tools: ['read', 'search', 'edit', 'execute', 'agent']
 user-invocable: true
 disable-model-invocation: false
@@ -64,19 +64,15 @@ Before starting a stage and before advancing past it, read the matching JSON gat
 .github/hooks/checklists/<stage>.hook.json
 ```
 
-e.g. requirements.hook.json, architecture.hook.json, design-review.hook.json, impl-plan.hook.json, security-remediation.hook.json, implementation.hook.json, code-review.hook.json, verify.hook.json, pr.hook.json
+e.g. requirements.hook.json, architecture.hook.json, design-review.hook.json, impl-plan.hook.json, implementation.hook.json, code-review.hook.json, verify.hook.json, pr.hook.json
 
 STAGE 5 OWNERSHIP:
+1. Verify the supplied repository and non-main branch; create/switch safely before scanning or editing application files.
 
-1. Perform Stage 5 using `.github/skills/security-remediation/SKILL.md` and `.github/hooks/checklists/security-remediation.hook.json`.
-2. Verify the supplied repository and non-main branch; create/switch safely before scanning or editing application files.
-3. Write security-remediation.md, show its diff and any scoped fixes, execute gate checks, and wait for approval before Implementation.
-4. Out-of-scope security findings are reported without sensitive values; get approval for any scope expansion instead of making unrelated fixes.
 
 GUARDRAILS:
 
 1. Never skip a gate or proceed to the next stage while a gate is FAIL.
-2. Never ask for REPO_URL or FEATURE_BRANCH_NAME before Stage 5 (Security Remediation).
-3. Only draft files allowed by the current stage. Never advance, commit, push, or create/update a PR without the applicable explicit approval.
-4. Never treat silence, an unrelated reply, or an automated gate PASS as approval; approval must be an explicit user response.
-5. Run the guardrail checks (branch, secret scan, dependency, scope) listed in ../copilot-instructions.md "Guardrail Enforcement" before advancing any gate.
+2. Only draft files allowed by the current stage. Never advance, commit, push, or create/update a PR without the applicable explicit approval.
+3. Never treat silence, an unrelated reply, or an automated gate PASS as approval; approval must be an explicit user response.
+4. Run the guardrail checks (branch, secret scan, dependency, scope) listed in ../copilot-instructions.md "Guardrail Enforcement" before advancing any gate.
