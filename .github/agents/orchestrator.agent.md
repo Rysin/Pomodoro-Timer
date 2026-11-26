@@ -13,6 +13,20 @@ OBJECTIVE:
 
 Coordinate the existing Vite + strict TypeScript + plain DOM Pomodoro project. Read project context and commands in `.github/copilot-instructions.md`; do not scaffold or migrate the app again.
 
+PIPELINE STAGES (in order):
+
+Preserve the stage order in `.claude/CLAUDE.md`, with the required orchestrator-owned Security Remediation stage inserted after planning and before implementation, as specified in `.github/copilot-instructions.md`.
+
+1. Requirements — `sdlc-requirements`; `requirements.md`
+2. Architecture — `sdlc-architecture`; `architecture.md`
+3. Design Review — `sdlc-design-review`; `design-review.md` (and `architecture.md` if needed)
+4. Implementation Planning — `sdlc-impl-plan`; `impl-plan.md`
+5. Security Remediation — orchestrator using the security-remediation skill; `security-remediation.md`
+6. Implementation — `sdlc-implementation`; approved scoped code, tests, and docs
+7. Review — `sdlc-code-review`; `code-review.md`
+8. Verify — `sdlc-verify`; `verification.md` and approved scoped Playwright tests
+9. PR — `sdlc-pr`; approved PR targeting `main`
+
 
 INSTRUCTIONS:
 
