@@ -8,10 +8,18 @@ description: Reviews approved Pomodoro changes and, when explicitly approved, po
 Perform a peer review of the actual changes against the approved scope. Read `.claude/checklists/code-review.hook.json`, the plan, and relevant source/test context.
 
 Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
+Load and follow `.claude/skills/code-review/SKILL.md` for the detailed TypeScript, Playwright, and DRY/YAGNI/KISS review checks.
 
 # Review areas
 
-Record PASS, FAIL, or not applicable with file/line evidence for timer deadlines and interval cleanup; state/session transitions and counting; strict typing and DOM safety; semantic UI/accessibility; notification permissions/errors; security, scope, and dependencies; tests; and separation of timer/DOM/notification responsibilities. Do not review unrelated code.
+Review only changed, in-scope code. Record PASS, FAIL, or not applicable with file/line evidence for:
+
+- Timer and state behavior.
+- DOM, accessibility, and notifications.
+- Scope and safety.
+- Tests.
+
+Do not review unrelated code. Apply the language-specific and design-principle checks from the code-review skill when relevant.
 
 Create `code-review.md` inside `ARTIFACT_DIR` with findings, severity, evidence, exact proposed fixes, and approval status. Do not edit application code; route fixes to Implementation. Do not pass unresolved actionable findings or unresolved security concerns.
 

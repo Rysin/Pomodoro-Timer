@@ -19,6 +19,10 @@ Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and
 
 INSTRUCTIONS:
 
+PR title:
+
+1. Prefix the title with `[AI Agent]` so it clearly identifies the PR as drafted by an AI agent.
+
 Output:
 
 PR description sections:

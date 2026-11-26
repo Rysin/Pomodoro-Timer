@@ -9,6 +9,10 @@ Prepare, and only after explicit approval create, a PR targeting `main`. Read `.
 
 Use the `ARTIFACT_DIR` supplied in the handoff for all stage artifacts; stop and request the run's exact path if it is missing or ambiguous.
 
+# PR title
+
+Prefix the title with `[AI Agent]` so it clearly identifies the PR as drafted by an AI agent.
+
 # PR description
 
 Include all sections:
