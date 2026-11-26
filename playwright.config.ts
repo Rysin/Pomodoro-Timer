@@ -1,24 +1,18 @@
-import { defineConfig, devices } from '@playwright/test'
+import { defineConfig } from '@playwright/test';
+
+const port = 4173;
 
 export default defineConfig({
-  testDir: './tests',
-  testMatch: '**/*.pw.ts',
-  reporter: 'list',
-  outputDir: 'node_modules/.cache/playwright/test-results',
+  testDir: './tests/e2e',
+  reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    baseURL: 'http://127.0.0.1:4173',
-    trace: 'retain-on-failure',
+    baseURL: process.env.PLAYWRIGHT_BASE_URL ?? `http://127.0.0.1:${port}`,
+    trace: 'on-first-retry',
   },
-  projects: [
-    {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-    },
-  ],
   webServer: {
-    command: 'npm run dev -- --host 127.0.0.1 --port 4173 --strictPort',
-    url: 'http://127.0.0.1:4173',
+    command: 'npm run build && npm run preview -- --host 127.0.0.1 --port 4173',
+    url: `http://127.0.0.1:${port}`,
     reuseExistingServer: !process.env.CI,
-    timeout: 30_000,
+    timeout: 120_000,
   },
-})
+});
